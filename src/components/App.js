@@ -11,7 +11,8 @@ import {
   changeOperation, 
   clearDisplay, 
   addMemory,
-  applyMemory 
+  applyMemory, 
+  clearMemory
 } from '../actions';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
   const handleMemoryApply = () => {
     dispatch(applyMemory());
   }
+  const handleMemoryClear = () => {
+    dispatch(clearMemory());
+  }
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -50,8 +54,8 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemoryAdd}/>
-              <CalcButton value={"MR"} onclick={handleMemoryApply}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MR"} onClick={handleMemoryApply}/>
+              <CalcButton value={"MC"} onClick={handleMemoryClear}/>
             </div>
 
             <div className="row">
